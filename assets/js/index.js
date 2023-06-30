@@ -11,12 +11,12 @@ anime({
 
 imgOverlay.childNodes.forEach((node, i) => {
     if(node && node.style) {
-        const bounds = node.getBoundingClientRect();
+        //const bounds = node.getBoundingClientRect();
 
         anime({
             targets: node,
             opacity: [0, 1],
-            width: [bounds.width*1.5, bounds.width*(node.id == `links` ? 1 : 1.1)],
+            //width: [bounds.width*1.5, bounds.width*(node.id == `links` ? 1 : 1.1)],
             duration: 1500,
             letterSpacing: [`6px`, `0px`],
             right: [`50px`, `0px`],

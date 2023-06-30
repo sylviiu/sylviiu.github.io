@@ -21,8 +21,10 @@
 
 <body style="background: rgb(8,8,8);width: 100vw;height: 100vh;overflow-x: hidden;color: rgb(255,255,255);font-family: Alata, sans-serif;"><script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <div style="height: 100vh;background: linear-gradient(102deg, rgba(0,0,0,0) 26%, black 52%), url(&quot;https://cdn.bootstrapstudio.io/placeholders/1400x800.png&quot;);">
-        <div id="img" style="width: 100vw;height: 100vh;background: linear-gradient(-81deg, black 33%, rgba(0,0,0,0) 52%) center / cover, url(&quot;assets/img/bright2.webp&quot;) -100px / cover no-repeat;opacity: 1;">
-            <div class="d-flex flex-column justify-content-center align-items-end" id="img-overlay" style="width: 100vw;height: 100vh;padding: 10%;backdrop-filter: brightness(0%);">
+        <div id="img" style="width: 100vw;height: 100vh;background: url(&quot;assets/img/bright2.webp&quot;) -100px / cover no-repeat;opacity: 1;">
+            <div class="d-none d-print-block d-sm-block d-md-block d-lg-block d-xl-block d-xxl-block" id="notsmbgoverlay" style="width: 100vw;height: 100vh;padding: 10%;background: linear-gradient(-81deg, black 33%, rgba(0,0,0,0) 56%);position: absolute;"></div>
+            <div class="d-print-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none" id="smbgoverlay" style="width: 100vw;height: 100vh;padding: 10%;background: linear-gradient(79deg, rgba(0,0,0,0) 26%, black 67%), linear-gradient(144deg, rgba(0,0,0,0) 26%, black 67%);position: absolute;"></div>
+            <div class="d-flex flex-column justify-content-center align-items-end" id="img-overlay" style="width: 100vw;height: 100vh;padding: 10%;">
                 <h1 id="name" style="font-size: calc(min(100vw, 100vh)/5);backdrop-filter: opacity(1) blur(0px);position: relative;font-weight: bold;text-align: right;">sylviiu</h1>
                 <h1 id="description-1" style="font-size: calc(min(100vw, 100vh)/15.7);color: rgba(255,255,255,0.58);text-align: right;position: relative;">software developer</h1>
                 <h1 id="description-2" style="font-size: calc(min(100vw, 100vh)/15.7);color: rgba(255,255,255,0.58);text-align: right;position: relative;">vr enthusiast</h1>

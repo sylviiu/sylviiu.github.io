@@ -6,11 +6,15 @@ document.body.querySelectorAll(`.btn`).forEach(btn => {
         btn.removeAttribute(`href`);
 
         btn.onclick = () => {
+            const originalMarginLeft = btn.style.marginLeft;
+
             btn.style.marginLeft = `0px`;
 
             const bounds = btn.getBoundingClientRect();
 
             const target = popout(btn, false);
+
+            btn.style.marginLeft = originalMarginLeft;
 
             const originalRadius = bounds.width/2
 

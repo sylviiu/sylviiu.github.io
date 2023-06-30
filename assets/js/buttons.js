@@ -6,7 +6,7 @@ document.body.querySelectorAll(`.btn`).forEach(btn => {
         btn.removeAttribute(`href`);
 
         btn.onclick = () => {
-            //btn.style.marginLeft = `0px`;
+            btn.style.marginLeft = `0px`;
 
             const bounds = btn.getBoundingClientRect();
 
@@ -57,6 +57,7 @@ document.body.querySelectorAll(`.btn`).forEach(btn => {
                         height: `100vh`,
                         maxWidth: `100vw`,
                         maxHeight: `100vh`,
+                        marginLeft: 0,
                         borderRadius: 0,
                         duration: duration - (duration/5),
                         easing: `easeOutExpo`,

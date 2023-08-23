@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Input Reaction Test</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    </head>
+
+    <body>
+        <div id="content">
+            <h1>Input Reaction Test</h1>
+            <h3>Press A [X on DualShock] to begin.</h3>
+    
+            <div id="controllersDiv"></div>
+    
+            <div id="reactionTime">
+                <h3 id="waiting">Waiting for input...</h3>
+            </div>
+    
+            <div id="settings">
+                <div class="opt" id="vibration">
+                    <input type="checkbox" checked>
+                    Vibration
+                </div>
+                <div class="opt" id="sound">
+                    <input type="checkbox" checked>
+                    Sound
+                </div>
+            </div>
+        </div>
+
+        <script src="controller.js"></script>
+        <script src="icons.js"></script>
+        <script src="ui.js"></script>
+    </body>
+</html>

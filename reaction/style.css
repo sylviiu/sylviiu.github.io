@@ -3,8 +3,9 @@ body {
     margin: 0;
 }
 
-h3 {
+h3, h4, h5, h6 {
     font-weight: normal;
+    margin: 6px;
 }
 
 #content {
@@ -26,16 +27,24 @@ h3 {
 
 #reactionTime {
     display: flex;
+    flex-direction: column;
     background-color: #141414;
 
-    width: min(400px, 80vw);
-    height: 45px;
+    width: calc(min(400px, 80vw) - 48px);
+    height: 48px;
 
-    border-radius: 999px;
+    padding: 0px 24px;
 
-    text-align: center;
-    align-items: center;
+    border-radius: 24px;
+
     justify-content: center;
+}
+
+#reactionTime > * {
+    position: relative;
+
+    top: 0px;
+    left: 0px;
 }
 
 #controllersDiv {

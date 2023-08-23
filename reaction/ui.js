@@ -3,6 +3,8 @@ const controllersDiv = document.getElementById('controllersDiv');
 const reactionTime = document.getElementById('reactionTime');
 const waiting = reactionTime.querySelector('#waiting');
 
+const settingsDiv = document.getElementById('settings');
+
 let anim = null;
 
 let waitingAnim = () => anim = anime({
@@ -34,6 +36,8 @@ const reset = async (removeNodes) => {
         })
     });
 
+    settingsDiv.removeAttribute('style');
+
     started = null;
 
     anime.remove(waiting);
@@ -51,6 +55,10 @@ const reset = async (removeNodes) => {
 };
 
 const start = (gamepad) => {
+    settingsDiv.setAttribute('style', 'display: none;');
+
+    const opts = getOptions();
+
     anime.remove(waiting);
 
     anime({
@@ -79,34 +87,28 @@ const start = (gamepad) => {
 
                     const randomTime = Math.random() * 13000;
 
-                    console.log(`randomTime`, randomTime);
+                    console.log(`randomTime`, randomTime, `name`, name);
 
                     setTimeout(() => {
                         const beginLine = getVerticalLine({}, {
                             begin: () => {
                                 reactionTime.appendChild(beginLine);
 
-                                gamepad.vibrate();
+                                let sound = null;
+
+                                if(opts.vibration) gamepad.vibrate();
+                                if(opts.sound) sound = playRandomSound(opts.volume) 
 
                                 started = performance.now();
                                 console.log(`started`, started);
 
                                 const name = `onbuttonGame${started}`
 
-                                anime({
-                                    targets: line2,
-                                    width: `100%`,
-                                    easing: `linear`,
-                                    duration: 5000,
-                                    complete: () => {
-                                        delete gamepad[name];
-                                        reset([line, line2, beginLine]);
-                                    }
-                                });
-
                                 gamepad[name] = (i, button, timestamp) => {
                                     if(button.value == 1) {
                                         delete gamepad[name];
+
+                                        if(sound && !sound.paused) sound.pause();
 
                                         const time = timestamp - started;
 
@@ -143,6 +145,17 @@ const start = (gamepad) => {
                                         reactionTime.appendChild(endLine);
                                     }
                                 }
+
+                                anime({
+                                    targets: line2,
+                                    width: `100%`,
+                                    easing: `linear`,
+                                    duration: 5000,
+                                    complete: () => {
+                                        delete gamepad[name];
+                                        reset([line, line2, beginLine]);
+                                    }
+                                });
                             }
                         })
                     }, randomTime);

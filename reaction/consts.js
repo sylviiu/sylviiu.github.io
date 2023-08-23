@@ -60,3 +60,48 @@ const getPopoutText = (string, styleOpts={}) => {
 
     return txt;
 }
+
+const sounds = {}
+
+document.getElementById('sounds').querySelectorAll('audio').forEach((audio) => {
+    sounds[audio.id] = audio;
+});
+
+const playRandomSound = (volume) => {
+    const keys = Object.keys(sounds).filter(k => sounds[k].readyState == 4);
+
+    if(keys.length > 0) {
+        const sound = sounds[keys[Math.floor(Math.random() * keys.length)]];
+    
+        sound.currentTime = 0;
+        sound.volume = parseFloat(volume/100);
+        sound.play();
+
+        return sound;
+    } else {
+        console.log(`no sounds ready`);
+
+        return null;
+    }
+}
+
+const getOptions = () => {
+    const opts = {}
+
+    document.getElementById(`settings`).childNodes.forEach((node) => {
+        if(node && node.id && node.querySelector(`input`)) {
+            const input = node.querySelector(`input`);
+
+            switch(input.type) {
+                case `checkbox`:
+                    opts[node.id] = input.checked;
+                    break;
+                case `range`:
+                    opts[node.id] = Number(input.value);
+                    break;
+            }
+        }
+    });
+
+    return opts;
+}

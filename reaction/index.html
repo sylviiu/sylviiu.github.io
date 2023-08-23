@@ -9,6 +9,14 @@
     </head>
 
     <body>
+        <div id="sounds">
+            <audio id="boowomp" src="sounds/boowomp.mp3"></audio>
+            <audio id="drip" src="sounds/drip.mp3"></audio>
+            <audio id="foghorn" src="sounds/foghorn.mp3"></audio>
+            <audio id="lego" src="sounds/lego.mp3"></audio>
+            <audio id="vine" src="sounds/vine.mp3"></audio>
+        </div>
+
         <div id="content">
             <h1>Input Reaction Test</h1>
             <h3>Press A [X on DualShock] to begin.</h3>
@@ -21,18 +29,22 @@
     
             <div id="settings">
                 <div class="opt" id="vibration">
-                    <input type="checkbox" checked>
                     Vibration
+                    <input type="checkbox" checked>
                 </div>
                 <div class="opt" id="sound">
-                    <input type="checkbox" checked>
                     Sound
+                    <input type="checkbox" checked>
+                </div>
+                <div class="opt" id="volume">
+                    Volume
+                    <input type="range" min="0" max="100" value="35" style="width: 80px">
                 </div>
             </div>
         </div>
 
         <script src="controller.js"></script>
-        <script src="elements.js"></script>
+        <script src="consts.js"></script>
         <script src="ui.js"></script>
     </body>
 </html>

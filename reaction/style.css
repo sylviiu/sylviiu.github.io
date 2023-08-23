@@ -8,6 +8,10 @@ h3, h4, h5, h6 {
     margin: 6px;
 }
 
+#sounds {
+    display: none
+}
+
 #content {
     display: flex;
     flex-direction: column;
@@ -70,14 +74,22 @@ h3, h4, h5, h6 {
 }
 
 .opt {
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
 }
 
 #settings {
     display: flex;
     flex-direction: row;
 
+    margin-top: 20px;
+    
+    width: calc(min(400px, 80vw) - 30px);
+
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }

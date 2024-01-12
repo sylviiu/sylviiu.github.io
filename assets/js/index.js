@@ -13,7 +13,7 @@ anime({
     easing: `easeOutExpo`,
 });
 
-const strings = [ `software developer`, `creature`, `vr enthusiast`, `eeper`, `i'm probably asleep right now actually`, `if lost, return to illiya` ];
+const strings = [ `software developer`, `creature`, `vr enthusiast`, `eeper`, `i'm probably asleep right now actually` ];
 
 imgOverlay.childNodes.forEach((node, i) => {
     if(node && node.id && node.id.startsWith(`string`)) {
